@@ -31,7 +31,7 @@ namespace RC
         private Vector2 tiltInput = Vector2.zero;
         private float turnForce = 0f;
         private float swayTimer = 0f;
-        private bool isGrounded = true;
+        [SerializeField] private bool isGrounded = true;
 
         private void OnEnable()
         {
@@ -70,7 +70,7 @@ namespace RC
         }
         private void ApplyYaw()
         {
-            float yawForce = (1.3f - Mathf.Abs(moveInput.y)) * helicopterRigidbody.mass * powerInput.x * 5f;
+            float yawForce = (1.3f - Mathf.Abs(moveInput.y)) * helicopterRigidbody.mass * powerInput.x * 2f;
             helicopterRigidbody.AddRelativeTorque(0f, yawForce, 0f);
         }
         //Áp dụng lực nâng
@@ -156,14 +156,14 @@ namespace RC
             mainRotor.RotarSpeed = 5000f * rotorSpeed;
             tailRotor.RotarSpeed = 3000f * rotorSpeed;
         }
-        private void OnCollisionEnter()
-        {
-            isGrounded = true;
-        }
+        //private void OnCollisionEnter()
+        //{
+        //    isGrounded = true;
+        //}
 
-        private void OnCollisionExit()
-        {
-            isGrounded = false;
-        }
+        //private void OnCollisionExit()
+        //{
+        //    isGrounded = false;
+        //}
     }
 }

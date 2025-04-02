@@ -41,7 +41,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_Name
@@ -57,23 +57,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -45.5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 23.9
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_LocalRotation.w
@@ -209,7 +209,7 @@ MonoBehaviour:
   mainRotor: {fileID: 3018924301095816544}
   tailRotor: {fileID: 2116731873093741458}
   turnSpeed: 10
-  forwardSpeed: 10
+  forwardSpeed: 25
   forwardTilt: 20
   turnTilt: 30
   maxAltitude: 100
@@ -218,6 +218,7 @@ MonoBehaviour:
   swaySpeed: 2
   swayLerpSpeed: 20
   inputReader: {fileID: 11400000, guid: b4adbdb838dac7b46ba6872ebca1537a, type: 2}
+  isGrounded: 1
 --- !u!114 &1276992956834284456
 MonoBehaviour:
   m_ObjectHideFlags: 0
