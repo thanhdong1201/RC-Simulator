@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class HelicopterController : MonoBehaviour
+public class HelicopterControllers : MonoBehaviour
 {
     public AudioSource HelicopterSound;
     public ControlPanel ControlPanel;

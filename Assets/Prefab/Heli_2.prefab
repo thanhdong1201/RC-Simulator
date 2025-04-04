@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0746b311f222b49af14c225e89d651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HelicopterData: {fileID: 11400000, guid: 8c14013680820614e8ab6d09729dd985, type: 2}
   helicopterAudio: {fileID: 1676190996369058319}
   mainRotor: {fileID: 2586988203405605698}
   tailRotor: {fileID: 8107276451927387546}

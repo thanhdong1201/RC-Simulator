@@ -27,7 +27,7 @@ public class UIToggleSO : ScriptableObject
     }
     public void SetGamePaused(bool isPaused)
     {
-        Time.timeScale = isPaused ? 0f : 1f;
+        //Time.timeScale = isPaused ? 0f : 1f;
         AudioListener.pause = isPaused;
     }
     private void OnEnable()

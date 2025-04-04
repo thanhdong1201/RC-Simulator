@@ -5,6 +5,7 @@ namespace RC
     public class HelicopterController : MonoBehaviour
     {
         [Header("Helicopter Components")]
+        public HelicopterSO HelicopterData;
         [SerializeField] private AudioSource helicopterAudio;
         private Rigidbody helicopterRigidbody;
         [SerializeField] private HeliRotorController mainRotor;
