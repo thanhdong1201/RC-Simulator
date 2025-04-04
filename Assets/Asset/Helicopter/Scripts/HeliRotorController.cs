@@ -4,7 +4,8 @@ using UnityEngine;
 //rename
 public class HeliRotorController : MonoBehaviour
 {
-	public enum Axis
+	public bool IsReversed = false;
+    public enum Axis
 	{
 		X,
 		Y,
@@ -24,14 +25,22 @@ public class HeliRotorController : MonoBehaviour
     void Start ()
 	{
         OriginalRotate = transform.localEulerAngles;
-	}
+    }
 
 	void Update ()
 	{
-        rotateDegree += RotarSpeed * Time.deltaTime;
-	    rotateDegree = rotateDegree%360;
+		if (IsReversed)
+		{
+            rotateDegree -= RotarSpeed * Time.deltaTime;
+        }
+		else
+		{
+            rotateDegree += RotarSpeed * Time.deltaTime;
+        }
+            
+		rotateDegree = rotateDegree%360;
 
-		switch (RotateAxis)
+        switch (RotateAxis)
 		{
 		    case Axis.Y:
 		        transform.localRotation = Quaternion.Euler(OriginalRotate.x, rotateDegree, OriginalRotate.z);

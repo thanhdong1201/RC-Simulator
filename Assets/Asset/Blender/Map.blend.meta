@@ -17,6 +17,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Go
+    second: {fileID: 2100000, guid: 5ed2306aa7267f94887493898073ccb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Hang rao
     second: {fileID: 2100000, guid: aa03c4c69ae38414a8607e1ef44345cd, type: 2}
   - first:

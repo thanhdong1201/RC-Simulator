@@ -6,7 +6,7 @@ namespace RC
     {
         [Header("Helicopter Components")]
         [SerializeField] private AudioSource helicopterAudio;
-        [SerializeField] private Rigidbody helicopterRigidbody;
+        private Rigidbody helicopterRigidbody;
         [SerializeField] private HeliRotorController mainRotor;
         [SerializeField] private HeliRotorController tailRotor;
 
@@ -44,7 +44,10 @@ namespace RC
             inputReader.MoveEvent -= UpdateMoveInput;
             inputReader.PowerEvent -= UpdatePowerInput;
         }
-
+        private void Start()
+        {
+            helicopterRigidbody = GetComponent<Rigidbody>();
+        }
         private void UpdateMoveInput(Vector2 value) => moveInput = value;
         private void UpdatePowerInput(Vector2 value) => powerInput = value;
         private void FixedUpdate()
@@ -70,7 +73,8 @@ namespace RC
         }
         private void ApplyYaw()
         {
-            float yawForce = (1.3f - Mathf.Abs(moveInput.y)) * helicopterRigidbody.mass * powerInput.x * 2f;
+            //float yawForce = (1.3f - Mathf.Abs(moveInput.y)) * helicopterRigidbody.mass * powerInput.x * 15f;
+            float yawForce = helicopterRigidbody.mass * powerInput.x * 15f;
             helicopterRigidbody.AddRelativeTorque(0f, yawForce, 0f);
         }
         //Áp dụng lực nâng
@@ -153,17 +157,17 @@ namespace RC
 
 
             float rotorSpeed = Mathf.Lerp(0.3f, 1f, heightRatio);
-            mainRotor.RotarSpeed = 5000f * rotorSpeed;
+            mainRotor.RotarSpeed = 3000f * rotorSpeed;
             tailRotor.RotarSpeed = 3000f * rotorSpeed;
         }
-        //private void OnCollisionEnter()
-        //{
-        //    isGrounded = true;
-        //}
+        private void OnCollisionEnter()
+        {
+            isGrounded = true;
+        }
 
-        //private void OnCollisionExit()
-        //{
-        //    isGrounded = false;
-        //}
+        private void OnCollisionExit()
+        {
+            isGrounded = false;
+        }
     }
 }

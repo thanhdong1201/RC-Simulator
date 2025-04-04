@@ -7,6 +7,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Da Cam Thach
+    second: {fileID: 2100000, guid: caedbe473f087124bace11d94f0188f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Go
+    second: {fileID: 2100000, guid: 5ed2306aa7267f94887493898073ccb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Ground
     second: {fileID: 2100000, guid: a9880883f5eab6d4796cfa4111c4a72d, type: 2}
   - first:
@@ -38,6 +48,16 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: San
+    second: {fileID: 2100000, guid: 504e2ba179de87f438c96c8e6990950c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: San co
+    second: {fileID: 2100000, guid: a9880883f5eab6d4796cfa4111c4a72d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: San gach
     second: {fileID: 2100000, guid: 504e2ba179de87f438c96c8e6990950c, type: 2}
   - first:
       type: UnityEngine:Material
