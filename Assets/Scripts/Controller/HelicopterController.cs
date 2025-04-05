@@ -24,6 +24,13 @@ namespace RC
         [SerializeField] private float swaySpeed = 2f;
         [SerializeField] private float swayLerpSpeed = 20f;
 
+        [Header("Ground Check Settings")]
+        [SerializeField] private Transform groundCheckPoint;
+        [SerializeField] private float groundCheckDistance = 0.5f;
+        [SerializeField] private LayerMask groundLayer; 
+        [SerializeField] private bool isGrounded = true;
+        [SerializeField] private bool isColision = false;
+
         [Header("Control Inputs")]
         [SerializeField] private InputReaderSO inputReader;
 
@@ -32,7 +39,6 @@ namespace RC
         private Vector2 tiltInput = Vector2.zero;
         private float turnForce = 0f;
         private float swayTimer = 0f;
-        [SerializeField] private bool isGrounded = true;
 
         private void OnEnable()
         {
@@ -51,9 +57,13 @@ namespace RC
         }
         private void UpdateMoveInput(Vector2 value) => moveInput = value;
         private void UpdatePowerInput(Vector2 value) => powerInput = value;
+        private void Update()
+        {
+            GroundCheck();
+            UpdateRotorEffect();
+        }
         private void FixedUpdate()
         {
-            UpdateRotorEffect();
             ApplyLiftForce();
 
             if (isGrounded) return;
@@ -66,17 +76,19 @@ namespace RC
         //Áp dụng lực di chuyển
         private void ApplyMovement()
         {
-            float turnAmount = turnSpeed * Mathf.Lerp(moveInput.x, moveInput.x * (1.5f - Mathf.Abs(moveInput.y)), Mathf.Max(0f, moveInput.y));
-            turnForce = Mathf.Lerp(turnForce, turnAmount, Time.fixedDeltaTime * turnSpeed);
-
-            helicopterRigidbody.AddRelativeTorque(0f, turnForce * helicopterRigidbody.mass, 0f);
+            // Áp dụng lực tiến/lùi (trục Z cục bộ)
             helicopterRigidbody.AddRelativeForce(Vector3.forward * moveInput.y * forwardSpeed * helicopterRigidbody.mass);
+
+            // Thêm lực ngang (trục X cục bộ) để di chuyển trái/phải
+            float sideSpeed = forwardSpeed * 0.8f; // Tốc độ di chuyển ngang, có thể điều chỉnh
+            helicopterRigidbody.AddRelativeForce(Vector3.right * moveInput.x * sideSpeed * helicopterRigidbody.mass);
         }
+
         private void ApplyYaw()
         {
-            //float yawForce = (1.3f - Mathf.Abs(moveInput.y)) * helicopterRigidbody.mass * powerInput.x * 15f;
-            float yawForce = helicopterRigidbody.mass * powerInput.x * 15f;
+            float yawForce = helicopterRigidbody.mass * powerInput.x * turnSpeed;
             helicopterRigidbody.AddRelativeTorque(0f, yawForce, 0f);
+
         }
         //Áp dụng lực nâng
         private void ApplyLiftForce()
@@ -128,7 +140,8 @@ namespace RC
         //Hiệu ứng nghiêng máy bay
         private void ApplyTilt() 
         {
-            tiltInput.x = Mathf.Lerp(tiltInput.x, moveInput.x * turnTilt, Time.deltaTime);
+            //tiltInput.x = Mathf.Lerp(tiltInput.x, moveInput.x * turnTilt, Time.deltaTime);
+            tiltInput.x = Mathf.Lerp(tiltInput.x, (moveInput.x + powerInput.x) * turnTilt, Time.deltaTime);
             tiltInput.y = Mathf.Lerp(tiltInput.y, moveInput.y * forwardTilt, Time.deltaTime);
             helicopterRigidbody.transform.localRotation = Quaternion.Euler(tiltInput.y, helicopterRigidbody.transform.localEulerAngles.y, -tiltInput.x);
         }
@@ -163,12 +176,28 @@ namespace RC
         }
         private void OnCollisionEnter()
         {
-            isGrounded = true;
+            isColision = true;
         }
 
         private void OnCollisionExit()
         {
-            isGrounded = false;
+            isColision = false;
+        }
+        private void GroundCheck()
+        {     
+            if (Physics.Raycast(groundCheckPoint.position, Vector3.down, groundCheckDistance, groundLayer) && isColision)
+            {
+                isGrounded = true;
+            }
+            else
+            {
+                isGrounded = false;
+            }
+        }
+        private void OnDrawGizmosSelected()
+        {
+            if (groundCheckPoint == null) return;
+            Debug.DrawRay(groundCheckPoint.position, Vector3.down * groundCheckDistance, isGrounded ? Color.green : Color.red);
         }
     }
 }

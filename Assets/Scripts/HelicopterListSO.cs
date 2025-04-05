@@ -5,13 +5,13 @@ using UnityEngine;
 public class HelicopterListSO : ScriptableObject
 {
     [SerializeField] private List<HelicopterSO> list = new();
-    [SerializeField] private HelicopterSO current;
+    [SerializeField] private HelicopterSO currentHelicopter;
 
-    public HelicopterSO GetCurrentHelicopter() => current;
+    public HelicopterSO GetCurrentHelicopter() => currentHelicopter;
 
-    public void SetCurrentHelicopter(HelicopterSO h)
+    public void SetCurrentHelicopter(HelicopterSO hc)
     {
-        current = h;
+        currentHelicopter = hc;
     }
 
     public List<HelicopterSO> GetAll() => list;
