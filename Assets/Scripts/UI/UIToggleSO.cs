@@ -30,6 +30,16 @@ public class UIToggleSO : ScriptableObject
         //Time.timeScale = isPaused ? 0f : 1f;
         AudioListener.pause = isPaused;
     }
+    public void GamePlay()
+    {
+        TogglePanel(UIPanel.GamePlay);
+        SetGamePaused(false);
+    }
+    public void CutScene()
+    {
+        TogglePanel(UIPanel.CutScene);
+        SetGamePaused(false);
+    }
     private void OnEnable()
     {
         SetGamePaused(false);

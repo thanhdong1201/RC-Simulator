@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject completePanel;
     [SerializeField] private GameObject levelPanel;
+    [SerializeField] private GameObject cutScenePanel;
+    [SerializeField] private GameObject questPanel;
 
     private Dictionary<UIPanel, GameObject> uiPanels;
 
@@ -34,6 +36,8 @@ public class UIManager : MonoBehaviour
             {UIPanel.GameOver, gameOverPanel},
             {UIPanel.Complete, completePanel},
             {UIPanel.Level, levelPanel},
+            {UIPanel.CutScene, cutScenePanel},
+            {UIPanel.Quest, questPanel},
         };
 
         TogglePanel(UIPanel.GamePlay);
@@ -56,4 +60,6 @@ public enum UIPanel
     Complete,
     Tutorial,
     Level,
+    CutScene,
+    Quest,
 }
