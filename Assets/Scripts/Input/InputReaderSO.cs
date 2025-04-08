@@ -11,6 +11,7 @@ public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions
     public event Action<Vector2> LookEvent;
     public event Action<Vector2> MoveEvent;
     public event Action<Vector2> PowerEvent;
+    public event Action InteractEvent;
 
     private void OnEnable()
     {
@@ -67,6 +68,10 @@ public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions
             PowerEvent?.Invoke(Vector2.zero);
         }
     }
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        InteractEvent?.Invoke();
+    }
 
     // Đối với joystick hay input kiểu Vector2 gọi trực tiếp:
     public void OnLook(Vector2 lookInput)
@@ -101,6 +106,10 @@ public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions
         {
             PowerEvent?.Invoke(Vector2.zero);
         }
+    }
+    public void OnInteract()
+    {
+        InteractEvent?.Invoke();
     }
     // Có thể bổ sung thêm các phương thức khác nếu cần thiết.
 }

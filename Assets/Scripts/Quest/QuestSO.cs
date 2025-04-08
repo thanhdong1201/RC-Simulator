@@ -29,6 +29,9 @@ public class QuestSO : ScriptableObject
     {
         currentStep++;
         OnProgressStep?.Invoke();
+    }
+    public void CompleteQuest()
+    {
         if (currentStep >= totalSteps)
         {
             isCompleted = true;

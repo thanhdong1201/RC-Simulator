@@ -6,6 +6,7 @@ public class QuestUI : MonoBehaviour
     [SerializeField] private QuestSO quest;
     [SerializeField] private UIToggleSO uiToggle;
     [SerializeField] private TextMeshProUGUI questNameText;
+    [SerializeField] private TextMeshProUGUI questNoficationText;
     [SerializeField] private TextMeshProUGUI questDescriptionText;
     [SerializeField] private TextMeshProUGUI questProgressText;
 
@@ -32,5 +33,10 @@ public class QuestUI : MonoBehaviour
     private void UpdateText()
     {
         questProgressText.text = quest.QuestObjective + $": {quest.CurrentStep}/{quest.TotalSteps}";
+        if (quest.CurrentStep >= quest.TotalSteps)
+        {
+            questNoficationText.gameObject.SetActive(true);
+            questNoficationText.text = "Landing on helicopter platform!";
+        }
     }
 }

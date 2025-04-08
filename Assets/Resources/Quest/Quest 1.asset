@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02444be7878384aaa0d42acb4bbfe5, type: 3}
   m_Name: Quest 1
   m_EditorClassIdentifier: 
-  questName: Find the soda can
-  description: Find the soda can
-  questObjective: Soda can
-  totalSteps: 3
+  questName: Put out the fire
+  description: Put out the fire
+  questObjective: Fires extinguished
+  totalSteps: 1
   currentStep: 0
   isCompleted: 0

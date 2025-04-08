@@ -19,10 +19,10 @@ public class UIGauge : MonoBehaviour
     }
     private void Start()
     {
-        enginePowerBar.fillAmount = 0.075f;
+        enginePowerBar.fillAmount = 0.11f;
     }
     private void UpdateGauge(float value)
     {
-        enginePowerBar.fillAmount = DOVirtual.EasedValue(0.075f, 0.435f, value, easeType); // Hoặc Ease.InCubic, Ease.InExpo
+        enginePowerBar.fillAmount = DOVirtual.EasedValue(0.11f, 0.435f, value, easeType); // Hoặc Ease.InCubic, Ease.InExpo
     }
 }

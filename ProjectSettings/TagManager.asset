@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Interactable
+  - Water
+  - Fire
   layers:
   - Default
   - TransparentFX

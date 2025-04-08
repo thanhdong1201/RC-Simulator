@@ -166,11 +166,11 @@ namespace RC
             // Quy đổi độ cao thành tỉ lệ từ 0 đến 1 dựa trên maxAltitude
             float heightRatio = Mathf.Clamp01(currentAltitude / maxAltitude);
 
-            float pitch = Mathf.Lerp(0.75f, 1f, heightRatio);
+            float pitch = Mathf.Lerp(0.6f, 1f, heightRatio);
             helicopterAudio.pitch = pitch;
 
 
-            float rotorSpeed = Mathf.Lerp(0.3f, 1f, heightRatio);
+            float rotorSpeed = Mathf.Lerp(0.2f, 1f, heightRatio);
             mainRotor.RotarSpeed = 3000f * rotorSpeed;
             tailRotor.RotarSpeed = 3000f * rotorSpeed;
         }
