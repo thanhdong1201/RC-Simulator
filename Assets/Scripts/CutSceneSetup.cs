@@ -52,9 +52,8 @@ public class CutSceneSetup : MonoBehaviour
 public class CutSceneStep
 {
     public enum BlendStyle { EaseInOut, Cut } 
-
     public float holdDuration;
     public float blendDuration;
-    public BlendStyle blendStyle; 
+    public BlendStyle blendStyle;
     public UnityEvent cutSceneEvent; 
 }

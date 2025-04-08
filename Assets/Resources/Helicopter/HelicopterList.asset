@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee78755b77eb610469a0e0b2082ddfa6, type: 3}
   m_Name: HelicopterList
   m_EditorClassIdentifier: 
-  helicopterList:
+  list:
   - {fileID: 11400000, guid: 5d043f815f6dc694ea7cb1340ab3781d, type: 2}
   - {fileID: 11400000, guid: 8c14013680820614e8ab6d09729dd985, type: 2}
   - {fileID: 11400000, guid: 73c5fe5f5e728e54bb01e77c701049a0, type: 2}
-  currentHelicopter: {fileID: 11400000, guid: 5d043f815f6dc694ea7cb1340ab3781d, type: 2}
+  currentHelicopter: {fileID: 11400000, guid: 8c14013680820614e8ab6d09729dd985, type: 2}

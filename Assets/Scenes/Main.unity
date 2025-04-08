@@ -2516,7 +2516,7 @@ MonoBehaviour:
   uiToggleSO: {fileID: 11400000, guid: e20cb6a17f6b4584881b01b3bfba7066, type: 2}
   cinemachineBrain: {fileID: 1366423325}
   cutSceneSteps:
-  - holdDuration: 2
+  - holdDuration: 3
     blendDuration: 0
     blendStyle: 1
     cutSceneEvent:
@@ -6770,7 +6770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &831414692
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8589,6 +8589,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151912835}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1176210136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1176210137}
+  m_Layer: 3
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1176210137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1176210136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.97, y: 0.91, z: 1.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1727052830}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1178217163
 GameObject:
   m_ObjectHideFlags: 0
@@ -13442,6 +13473,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HelicopterData: {fileID: 11400000, guid: 8c14013680820614e8ab6d09729dd985, type: 2}
+--- !u!114 &1727052832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844168923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1146b703e7fd54494469cee3dbcf7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 1176210137}
+  inputReader: {fileID: 11400000, guid: b4adbdb838dac7b46ba6872ebca1537a, type: 2}
+  speed: 40
+  lifeTime: 4
+  cooldown: 0.5
+  prefab: {fileID: 8985271325210561204, guid: d4c6e175aa72d7f4287d54b59ce8bf17, type: 3}
+  poolSize: 10
+  activeBullets: []
 --- !u!1001 &1759564888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15618,16 +15669,24 @@ PrefabInstance:
     - target: {fileID: 3096676268410977662, guid: 1e2d553c9a5892b4ba7b9bff3dd18341,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3096676268410872158, guid: 1e2d553c9a5892b4ba7b9bff3dd18341,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1176210137}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3096676268410977662, guid: 1e2d553c9a5892b4ba7b9bff3dd18341,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1727052831}
+    - targetCorrespondingSourceObject: {fileID: 3096676268410977662, guid: 1e2d553c9a5892b4ba7b9bff3dd18341,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1727052832}
   m_SourcePrefab: {fileID: 100100000, guid: 1e2d553c9a5892b4ba7b9bff3dd18341, type: 3}
 --- !u!222 &2803292695515435168
 CanvasRenderer:
@@ -15699,6 +15758,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Heli_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205498702974784886, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
