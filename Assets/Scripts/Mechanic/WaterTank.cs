@@ -6,6 +6,7 @@ public class WaterTank : MonoBehaviour
     [SerializeField] private float maxWater = 100f;
     [SerializeField] private float waterChangeRate = 0.5f;
     [SerializeField] private float currentWater;
+    [SerializeField] private float maxRaycastDistance = 1f;
     [SerializeField] private ParticleSystem waterSprayVfx;
 
     [Header("Events")]
@@ -26,9 +27,10 @@ public class WaterTank : MonoBehaviour
     }
     private void Update()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, 10f))
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, maxRaycastDistance))
         {
-            if (hit.collider.CompareTag("Water"))
+            float distance = hit.distance;
+            if (hit.collider.CompareTag("Water") && distance < 1f)
             {
                 RefillWater();
             }
@@ -50,10 +52,7 @@ public class WaterTank : MonoBehaviour
         {
             if (CurrentWater > 0f)
             {
-                if (!waterSprayVfx.isPlaying)
-                {
-                    waterSprayVfx.Play();
-                }
+                if (!waterSprayVfx.isPlaying) waterSprayVfx.Play();
 
                 CurrentWater -= waterChangeRate * 0.8f * Time.deltaTime;
             }
@@ -80,5 +79,10 @@ public class WaterTank : MonoBehaviour
             currentWater = Mathf.Clamp(value, 0f, maxWater);
             enginePowerEvent?.RaiseEvent(currentWater / maxWater);
         }
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, Vector3.down * maxRaycastDistance);
     }
 }

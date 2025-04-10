@@ -15,8 +15,8 @@ public class BulletShooter : MonoBehaviour
     [Header("ObjectPool")]
     [SerializeField] private GameObject prefab;
     [SerializeField] private int poolSize = 10;
-    [SerializeField] private List<GameObject> activeBullets = new List<GameObject>();
 
+    private List<GameObject> activeBullets = new List<GameObject>();
     private Queue<GameObject> pool = new Queue<GameObject>();
     private bool canShoot = true;
 

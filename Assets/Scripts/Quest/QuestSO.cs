@@ -21,9 +21,10 @@ public class QuestSO : ScriptableObject
     public bool IsCompleted => isCompleted;
     public int CurrentStep => currentStep;
 
-    private void OnEnable()
+    public void ResetQuestStep()
     {
         currentStep = 0;
+        isCompleted = false;
     }
     public void ProgressStep()
     {

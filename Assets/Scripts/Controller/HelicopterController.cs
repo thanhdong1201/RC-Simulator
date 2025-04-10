@@ -102,7 +102,7 @@ namespace RC
             if (powerInput.y < 0f)
             {
                 // Nếu đang cố gắng đi xuống, luôn cho phép hạ cánh bất kể độ cao
-                altitudeFactor = 1f;
+                altitudeFactor = 0.5f;
             }
             else
             {

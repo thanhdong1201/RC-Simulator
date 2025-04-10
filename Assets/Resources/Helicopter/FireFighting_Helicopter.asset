@@ -10,6 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8134db3c18307be4c9cc2daec84362dd, type: 3}
-  m_Name: Helicopter 2
+  m_Name: FireFighting_Helicopter
   m_EditorClassIdentifier: 
-  Name: Attack
+  Name: FireFighting_Helicopter
+  Type: 1

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Use for trigger Quest step
 public class QuestStepActivator : MonoBehaviour
 {
     [SerializeField] private QuestSO quest;

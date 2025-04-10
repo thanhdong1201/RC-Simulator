@@ -10,6 +10,10 @@ public class QuestUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questDescriptionText;
     [SerializeField] private TextMeshProUGUI questProgressText;
 
+    private void Awake()
+    {
+        quest.ResetQuestStep();
+    }
     private void OnEnable()
     {
         quest.OnQuestCompleted += OnQuestCompleted;
