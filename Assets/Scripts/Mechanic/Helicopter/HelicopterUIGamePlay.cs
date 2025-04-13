@@ -3,7 +3,7 @@ using UnityEngine;
 public class HelicopterUIGamePlay : MonoBehaviour
 {
     [SerializeField] private GameObject fireFightingUI;
-    //[SerializeField] private GameObject transportUI;
+    [SerializeField] private GameObject transportUI;
     [SerializeField] private GameObject combatUI;
     [SerializeField] private HelicopterListSO helicopterListSO;
 
@@ -11,6 +11,7 @@ public class HelicopterUIGamePlay : MonoBehaviour
     {
         fireFightingUI.SetActive(false);
         combatUI.SetActive(false);
+        transportUI.SetActive(false);
         SetUp();
     }
     private void SetUp()
@@ -23,7 +24,7 @@ public class HelicopterUIGamePlay : MonoBehaviour
         }
         if (currentHelicopter.Type == HelicopterType.Transport)
         {
-
+            transportUI.SetActive(true);
         }
         if (currentHelicopter.Type == HelicopterType.Firefighting)
         {

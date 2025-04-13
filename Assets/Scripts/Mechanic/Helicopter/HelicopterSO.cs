@@ -3,7 +3,6 @@
 [CreateAssetMenu(menuName = "ScriptableObjects/Helicopter")]
 public class HelicopterSO : ScriptableObject
 {
-    public string Name;
     public HelicopterType Type;
 }
 public enum HelicopterType

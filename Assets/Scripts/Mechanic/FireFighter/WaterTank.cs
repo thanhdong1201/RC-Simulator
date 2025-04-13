@@ -9,13 +9,15 @@ public class WaterTank : MonoBehaviour
     [SerializeField] private float maxRaycastDistance = 1f;
     [SerializeField] private ParticleSystem waterSprayVfx;
 
+    [Header("References")]
+    [SerializeField] private WaterIntakeTrigger waterIntakeTrigger;
+
     [Header("Events")]
     [SerializeField] private FloatEventChannelSO enginePowerEvent;
     [SerializeField] private InputReaderSO inputReader;
 
     private RaycastHit hit;
     private bool isSpraying = false;
-    private bool isRefilling = false;
 
     private void OnEnable()
     {
@@ -29,11 +31,11 @@ public class WaterTank : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, Vector3.down, out hit, maxRaycastDistance))
         {
-            float distance = hit.distance;
-            if (hit.collider.CompareTag("Water") && distance < 1f)
-            {
-                RefillWater();
-            }
+            //float distance = hit.distance;
+            //if (hit.collider.CompareTag("Water") && distance < 1f)
+            //{
+            //    RefillWater();
+            //}
             if(hit.collider.CompareTag("Fire") && isSpraying)
             {
                 FirePoint firePoint = hit.collider.GetComponent<FirePoint>();
@@ -42,6 +44,11 @@ public class WaterTank : MonoBehaviour
                     firePoint.AddWater();
                 }
             }
+        }
+
+        if (waterIntakeTrigger.isInTrigger)
+        {
+            RefillWater();
         }
 
         SprayWater();
@@ -69,7 +76,10 @@ public class WaterTank : MonoBehaviour
     }
     private void RefillWater()
     {
-        CurrentWater += waterChangeRate * Time.deltaTime;
+        if (CurrentWater < maxWater)
+        {
+            CurrentWater += waterChangeRate * Time.deltaTime;
+        }
     }
     public float CurrentWater
     {

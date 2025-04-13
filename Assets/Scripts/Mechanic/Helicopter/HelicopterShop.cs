@@ -98,7 +98,7 @@ public class HelicopterShop : MonoBehaviour
         virtualCamera.LookAt = lookAtModels[index];
 
         currentHelicopter = lookAtModels[index].GetComponent<HelicopterName>().HelicopterData;
-        helicopterNameTxt.text = currentHelicopter.Name;
+        helicopterNameTxt.text = currentHelicopter.name;
     }
 
 }
