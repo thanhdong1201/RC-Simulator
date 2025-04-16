@@ -19748,6 +19748,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  onTriggerEnter: 0
 --- !u!4 &5361606993305186156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,

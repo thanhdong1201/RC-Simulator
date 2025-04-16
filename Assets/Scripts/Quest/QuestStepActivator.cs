@@ -5,11 +5,28 @@ using UnityEngine.Events;
 public class QuestStepActivator : MonoBehaviour
 {
     [SerializeField] private QuestSO quest;
+    [SerializeField] private bool onTriggerEnter = true;
     [SerializeField] private UnityEvent onActivateEvent;
+
     private bool isActivated = false;
+    private void OnTriggerEnter(Collider other)
+    {
+        if(onTriggerEnter)
+        {
+            AddStep(other);
+        }
+    }
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && !isActivated)
+        if (!onTriggerEnter)
+        {
+            AddStep(other);
+        }
+    }
+    private void AddStep(Collider other)
+    {
+        if (isActivated) return;
+        if (other.CompareTag("Player") || other.CompareTag("Interactable"))
         {
             isActivated = true;
             quest.ProgressStep();
