@@ -7,6 +7,7 @@ public class RopeEndAttacher : MonoBehaviour
 
     private Transform attachedObject; 
     private FixedJoint fixedJoint;
+    private Rigidbody attachedRb;
     private bool isHookedSomething => attachedObject != null;
 
     private void Start()
@@ -31,9 +32,12 @@ public class RopeEndAttacher : MonoBehaviour
         if (newObject == null) return;
 
         attachedObject = newObject;
-        Rigidbody targetRb = newObject.GetComponent<Rigidbody>();
+        attachedRb = newObject.GetComponent<Rigidbody>();
+        attachedRb.useGravity = false;
+        attachedRb.velocity = Vector3.zero; 
+        attachedRb.angularVelocity = Vector3.zero; 
 
-        fixedJoint.connectedBody = targetRb;
+        fixedJoint.connectedBody = attachedRb;
         fixedJoint.autoConfigureConnectedAnchor = false;
         fixedJoint.anchor = Vector3.zero; // Gắn vào tâm của vật thể
         fixedJoint.connectedAnchor = Vector3.zero; // Gắn vào tâm của đoạn cuối dây
@@ -42,7 +46,8 @@ public class RopeEndAttacher : MonoBehaviour
     {
         if (attachedObject == null || fixedJoint == null) return;
 
-        fixedJoint.connectedBody = null; // Ngắt kết nối với vật thể
+        attachedRb.useGravity = true;
+        fixedJoint.connectedBody = null; 
         attachedObject = null;
     }
     private void OnCollisionEnter(Collision collision)

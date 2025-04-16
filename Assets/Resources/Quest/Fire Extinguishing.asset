@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb02444be7878384aaa0d42acb4bbfe5, type: 3}
-  m_Name: Quest 1
+  m_Name: Fire Extinguishing
   m_EditorClassIdentifier: 
-  questName: Put out the fire
+  questName: Fire Extinguishing
   description: Put out the fire
   questObjective: Fires extinguished
-  totalSteps: 1
+  totalSteps: 2
   currentStep: 0
   isCompleted: 0
