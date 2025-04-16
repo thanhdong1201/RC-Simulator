@@ -14,6 +14,7 @@ namespace RC
         [Header("Flight Parameters")]
         [SerializeField] private float turnSpeed = 10f;
         [SerializeField] private float forwardSpeed = 10f;
+        [SerializeField] private float sideSpeed = 15f; // Tốc độ di chuyển ngang, có thể điều chỉnh
         [SerializeField] private float forwardTilt = 20f;
         [SerializeField] private float turnTilt = 30f;
         [SerializeField] private float maxAltitude = 30f;
@@ -79,8 +80,7 @@ namespace RC
             // Áp dụng lực tiến/lùi (trục Z cục bộ)
             helicopterRigidbody.AddRelativeForce(Vector3.forward * moveInput.y * forwardSpeed * helicopterRigidbody.mass);
 
-            // Thêm lực ngang (trục X cục bộ) để di chuyển trái/phải
-            float sideSpeed = forwardSpeed * 0.8f; // Tốc độ di chuyển ngang, có thể điều chỉnh
+            // Thêm lực ngang (trục X cục bộ) để di chuyển trái/phải; 
             helicopterRigidbody.AddRelativeForce(Vector3.right * moveInput.x * sideSpeed * helicopterRigidbody.mass);
         }
 

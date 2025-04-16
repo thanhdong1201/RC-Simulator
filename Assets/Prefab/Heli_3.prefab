@@ -87,6 +87,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 17d12b7570a4eff4eaaa2562f61e7fda, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -194,6 +198,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 9205622083503612907}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: 17d12b7570a4eff4eaaa2562f61e7fda,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6310799217823371084}
     - targetCorrespondingSourceObject: {fileID: 100004, guid: 17d12b7570a4eff4eaaa2562f61e7fda,
         type: 3}
       insertIndex: -1
@@ -275,10 +283,11 @@ MonoBehaviour:
   helicopterAudio: {fileID: 9205622083503612907}
   mainRotor: {fileID: 3018924301095816544}
   tailRotor: {fileID: 2116731873093741458}
-  turnSpeed: 15
-  forwardSpeed: 20
-  forwardTilt: 20
-  turnTilt: 20
+  turnSpeed: 12
+  forwardSpeed: 12
+  sideSpeed: 12
+  forwardTilt: 15
+  turnTilt: 15
   maxAltitude: 100
   climbSpeed: 20
   swayAmplitude: 3
@@ -408,6 +417,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6310799217823371084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2968328088053330665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0329a5056bf55284cb76d9b52d6a6d60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HelicopterData: {fileID: 11400000, guid: 73c5fe5f5e728e54bb01e77c701049a0, type: 2}
 --- !u!1 &2968328088053330669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100006, guid: 17d12b7570a4eff4eaaa2562f61e7fda,
