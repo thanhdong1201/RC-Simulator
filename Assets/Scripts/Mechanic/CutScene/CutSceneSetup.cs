@@ -9,9 +9,14 @@ using static CutSceneStep;
 public class CutSceneSetup : MonoBehaviour
 {
     [SerializeField] private UIToggleSO uiToggleSO;
-    [SerializeField] private CinemachineBrain cinemachineBrain;
     [SerializeField] private List<CutSceneStep> cutSceneSteps;
-
+    private CinemachineBrain cinemachineBrain;
+    private Camera mainCamera;
+    private void Awake()
+    {
+        mainCamera = Camera.main;
+        cinemachineBrain = mainCamera.gameObject.GetComponent<CinemachineBrain>();
+    }
     private void Start()
     {
         StartCoroutine(PlayCutScene());

@@ -6424,11 +6424,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba1e6d1fc01c15b40afc2d2ae6a69a9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest: {fileID: 11400000, guid: 5db2b1f795805e94596783f42c95d2c2, type: 2}
   uiToggle: {fileID: 11400000, guid: e20cb6a17f6b4584881b01b3bfba7066, type: 2}
   questNameText: {fileID: 1992891470376627887}
+  questDescriptionText: {fileID: 430142935962921664}
   questNoficationText: {fileID: 4900394111513795087}
-  questDescriptionText: {fileID: 0}
   questProgressText: {fileID: 7710264788801505864}
 --- !u!1 &8653500852360047092
 GameObject:

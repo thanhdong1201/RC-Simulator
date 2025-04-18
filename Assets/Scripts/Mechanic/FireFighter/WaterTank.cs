@@ -29,13 +29,8 @@ public class WaterTank : MonoBehaviour
     }
     private void Update()
     {
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, maxRaycastDistance))
+        if (Physics.Raycast(waterIntakeTrigger.transform.position, Vector3.down, out hit, maxRaycastDistance))
         {
-            //float distance = hit.distance;
-            //if (hit.collider.CompareTag("Water") && distance < 1f)
-            //{
-            //    RefillWater();
-            //}
             if(hit.collider.CompareTag("Fire") && isSpraying)
             {
                 FirePoint firePoint = hit.collider.GetComponent<FirePoint>();

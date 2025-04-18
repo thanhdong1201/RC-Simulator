@@ -5,6 +5,7 @@ public class QuestUI : MonoBehaviour
 {
     [SerializeField] private UIToggleSO uiToggle;
     [SerializeField] private TextMeshProUGUI questNameText;
+    [SerializeField] private TextMeshProUGUI questDescriptionText;
     [SerializeField] private TextMeshProUGUI questNoficationText;
     [SerializeField] private TextMeshProUGUI questProgressText;
 
@@ -26,6 +27,7 @@ public class QuestUI : MonoBehaviour
 
         questNameText.text = quest.QuestName;
         questProgressText.text = quest.QuestObjective + $": {quest.CurrentStep}/{quest.TotalSteps}";
+        questDescriptionText.text = quest.Description;
     }
     private void OnQuestCompleted()
     {

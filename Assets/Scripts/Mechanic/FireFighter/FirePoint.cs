@@ -4,7 +4,7 @@ public class FirePoint : MonoBehaviour
 {
     [SerializeField] private QuestSO quest;
     [SerializeField] private ParticleSystem fireVfx;
-    [SerializeField] private float waterNeeded = 5f; // Lượng nước cần để dập lửa
+    [SerializeField] private float waterNeeded = 2f; // Lượng nước cần để dập lửa
 
     private float currentWater = 0f;
     private bool alreadyExtinguished = false;   

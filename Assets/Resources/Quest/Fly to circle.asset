@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fly to circle
   m_EditorClassIdentifier: 
   questName: Fly to circle
-  description: Fly to circle
+  description: Learn how to fly
   questObjective: Circle
   totalSteps: 3
   currentStep: 0

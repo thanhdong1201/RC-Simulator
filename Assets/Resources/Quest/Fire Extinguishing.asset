@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fire Extinguishing
   m_EditorClassIdentifier: 
   questName: Fire Extinguishing
-  description: Put out the fire
+  description: Put out the fire!!!
   questObjective: Fires extinguished
   totalSteps: 2
   currentStep: 0
