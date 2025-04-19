@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(menuName = "ScriptableObjects/SceneSO")]
 public class SceneSO : ScriptableObject
 {
+    public QuestSO questSO;
     public int level;
     public bool isUnlocked = false;
 

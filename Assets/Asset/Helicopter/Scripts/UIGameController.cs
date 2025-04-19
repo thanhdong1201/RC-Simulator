@@ -46,6 +46,6 @@ public class UIGameController : MonoBehaviour
 
     public void RestartGame()
     {
-        Application.LoadLevel("Main");
+        //Application.LoadLevel("Main");
     }
 }

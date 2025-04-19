@@ -38,7 +38,7 @@ namespace RC
         private Vector2 moveInput = Vector2.zero;
         private Vector2 powerInput = Vector2.zero;
         private Vector2 tiltInput = Vector2.zero;
-        private float turnForce = 0f;
+        //private float turnForce = 0f;
         private float swayTimer = 0f;
 
         private void OnEnable()

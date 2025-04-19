@@ -10,6 +10,7 @@ public class QuestSO : ScriptableObject
     [SerializeField] private int totalSteps; 
     [SerializeField] private int currentStep;
     [SerializeField] private bool isCompleted;
+    [SerializeField] private int starPoints;
 
     public event Action OnProgressStep;
     public event Action OnQuestCompleted;
@@ -20,11 +21,13 @@ public class QuestSO : ScriptableObject
     public int TotalSteps => totalSteps;
     public bool IsCompleted => isCompleted;
     public int CurrentStep => currentStep;
+    public int StarPoints => starPoints;
 
     public void ResetQuestStep()
     {
         currentStep = 0;
         isCompleted = false;
+        starPoints = 0;
     }
     public void ProgressStep()
     {
@@ -38,5 +41,9 @@ public class QuestSO : ScriptableObject
             isCompleted = true;
             OnQuestCompleted?.Invoke();
         }
+    }
+    public void GetStarPoints()
+    {
+        starPoints++;
     }
 }

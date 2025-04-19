@@ -14,5 +14,4 @@ public class QuestManager : MonoBehaviour
     {
         questUI.SetUpQuest(activeQuestSO);
     }
-
 }

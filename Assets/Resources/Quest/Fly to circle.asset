@@ -18,3 +18,4 @@ MonoBehaviour:
   totalSteps: 3
   currentStep: 0
   isCompleted: 0
+  starPoints: -1

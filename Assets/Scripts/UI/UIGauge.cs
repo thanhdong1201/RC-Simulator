@@ -7,7 +7,6 @@ public class UIGauge : MonoBehaviour
     [SerializeField] private Image enginePowerBar;
     [SerializeField] private Ease easeType;
     [SerializeField] private FloatEventChannelSO enginePowerEvent;
-    private float previousValue = 0f;
 
     private void OnEnable()
     {
