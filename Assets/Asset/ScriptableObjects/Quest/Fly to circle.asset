@@ -15,7 +15,7 @@ MonoBehaviour:
   questName: Fly to circle
   description: Learn how to fly
   questObjective: Circle
-  totalSteps: 3
+  totalSteps: 1
   currentStep: 0
   isCompleted: 0
   starPoints: -1

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questSO: {fileID: 11400000, guid: bdc4c337ef5ff5e4c83269721f12bd26, type: 2}
   level: 1
-  isUnlocked: 0
+  isUnlocked: 1

@@ -14,7 +14,7 @@ public class AdManager : MonoBehaviour
     [SerializeField] private string rewardedAdUnitId = "ca-app-pub-3940256099942544/5224354917";
 
     [Header("Ad Settings")]
-    [SerializeField] private float interstitialCooldown = 30f;
+    [SerializeField] private float interstitialCooldown = 10f;
 
     public Action OnRewardedAdCompleted { get; set; }
 

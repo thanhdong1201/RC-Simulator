@@ -15,6 +15,7 @@ MonoBehaviour:
   questName: Fire Extinguishing
   description: Put out the fire!!!
   questObjective: Fires extinguished
-  totalSteps: 2
+  totalSteps: 1
   currentStep: 0
   isCompleted: 0
+  starPoints: 0

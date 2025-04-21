@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "com.unity.2d.sprite": "1.0.0",
+    "com.unity.adaptiveperformance.google.android": "5.1.3",
+    "com.unity.adaptiveperformance.samsung.android": "5.0.0",
     "com.unity.cinemachine": "2.10.3",
     "com.unity.collab-proxy": "2.7.1",
     "com.unity.feature.mobile": "1.0.0",
