@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Timer : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class Timer : MonoBehaviour
         lastUpdateTime = Time.realtimeSinceStartup;
     }
 
-    private void Update()
+    public void UpdateTimer()
     {
         float currentTime = Time.realtimeSinceStartup;
         if (currentTime - lastUpdateTime >= UPDATE_INTERVAL)

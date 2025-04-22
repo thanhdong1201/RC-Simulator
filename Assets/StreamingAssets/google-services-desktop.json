@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "174177813074",
+    "project_id": "helicopter-rc-simulator",
+    "storage_bucket": "helicopter-rc-simulator.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174177813074:android:e0d7d0e29f108ea166958b",
+        "android_client_info": {
+          "package_name": "com.BanhmiStudio.HelicopterRCSimulator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB--uIXhYy-BB0i3dlkk32aqa_cbC0JnbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

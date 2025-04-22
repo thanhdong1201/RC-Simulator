@@ -43,7 +43,7 @@ public class AdManager : MonoBehaviour
         {
             if (error != null)
             {
-                Debug.LogWarning($"UMP Update Failed: {error.Message}");
+                Debug.LogWarning($"[AdManager] UMP Update Failed: {error.Message}");
                 InitializeAdMob();
                 return;
             }
@@ -52,7 +52,7 @@ public class AdManager : MonoBehaviour
             {
                 if (formError != null)
                 {
-                    Debug.LogWarning($"UMP Form Failed: {formError.Message}");
+                    Debug.LogWarning($"[AdManager] UMP Form Failed: {formError.Message}");
                 }
                 InitializeAdMob();
             });
@@ -63,7 +63,7 @@ public class AdManager : MonoBehaviour
     {
         if (!ConsentInformation.CanRequestAds())
         {
-            Debug.LogWarning("Cannot request ads yet due to missing consent.");
+            Debug.LogWarning("[AdManager] Cannot request ads yet due to missing consent.");
             return;
         }
 
@@ -89,7 +89,7 @@ public class AdManager : MonoBehaviour
         bannerView = new BannerView(bannerAdUnitId, AdSize.Banner, AdPosition.Bottom);
         bannerView.LoadAd(new AdRequest());
         bannerView.Hide();
-        Debug.Log("Banner Ad Loaded");
+        Debug.Log("[AdManager] Banner Ad Loaded");
     }
 
     public void ShowBanner()
@@ -97,11 +97,11 @@ public class AdManager : MonoBehaviour
         if (bannerView != null)
         {
             bannerView.Show();
-            Debug.Log("Banner Ad Shown");
+            Debug.Log("[AdManager] Banner Ad Shown");
         }
         else
         {
-            Debug.LogWarning("Banner Ad not ready, reloading");
+            Debug.LogWarning("[AdManager] Banner Ad not ready, reloading");
             LoadBannerAd();
         }
     }
@@ -121,7 +121,7 @@ public class AdManager : MonoBehaviour
         {
             if (error != null)
             {
-                Debug.LogWarning($"Interstitial Ad Failed: {error.GetMessage()}");
+                Debug.LogWarning($"[AdManager] Interstitial Ad Failed: {error.GetMessage()}");
                 Invoke(nameof(LoadInterstitialAd), 10f);
                 return;
             }
@@ -129,17 +129,17 @@ public class AdManager : MonoBehaviour
             interstitialAd = ad;
 
             interstitialAd.OnAdPaid += (adValue) =>
-                Debug.Log($"Interstitial Ad Paid: {adValue.Value / 1_000_000f} {adValue.CurrencyCode}");
+                Debug.Log($"[AdManager] Interstitial Ad Paid: {adValue.Value / 1_000_000f} {adValue.CurrencyCode}");
 
             interstitialAd.OnAdFullScreenContentClosed += () =>
             {
-                Debug.Log("Interstitial Ad Closed");
+                Debug.Log("[AdManager] Interstitial Ad Closed");
                 LoadInterstitialAd();
             };
 
             interstitialAd.OnAdFullScreenContentFailed += (err) =>
             {
-                Debug.LogWarning($"Interstitial Ad Failed to show: {err.GetMessage()}");
+                Debug.LogWarning($"[AdManager] Interstitial Ad Failed to show: {err.GetMessage()}");
                 LoadInterstitialAd();
             };
         });
@@ -149,7 +149,6 @@ public class AdManager : MonoBehaviour
     {
         if (Time.time - lastInterstitialTime < interstitialCooldown)
         {
-            Debug.LogWarning("Interstitial Ad on cooldown");
             return false;
         }
 
@@ -157,11 +156,11 @@ public class AdManager : MonoBehaviour
         {
             interstitialAd.Show();
             lastInterstitialTime = Time.time;
-            Debug.Log("Interstitial Ad Shown");
+            Debug.Log("[AdManager] Interstitial Ad Shown");
             return true;
         }
 
-        Debug.LogWarning("Interstitial Ad not ready, reloading");
+        Debug.LogWarning("[AdManager] Interstitial Ad not ready, reloading");
         LoadInterstitialAd();
         return false;
     }
@@ -176,7 +175,7 @@ public class AdManager : MonoBehaviour
         {
             if (error != null)
             {
-                Debug.LogWarning($"Rewarded Ad Failed: {error.GetMessage()}");
+                Debug.LogWarning($"[AdManager] Rewarded Ad Failed: {error.GetMessage()}");
                 Invoke(nameof(LoadRewardedAd), 10f);
                 return;
             }
@@ -184,17 +183,17 @@ public class AdManager : MonoBehaviour
             rewardedAd = ad;
 
             rewardedAd.OnAdPaid += (adValue) =>
-                Debug.Log($"Rewarded Ad Paid: {adValue.Value / 1_000_000f} {adValue.CurrencyCode}");
+                Debug.Log($"[AdManager] Rewarded Ad Paid: {adValue.Value / 1_000_000f} {adValue.CurrencyCode}");
 
             rewardedAd.OnAdFullScreenContentClosed += () =>
             {
-                Debug.Log("Rewarded Ad Closed");
+                Debug.Log("[AdManager] Rewarded Ad Closed");
                 LoadRewardedAd();
             };
 
             rewardedAd.OnAdFullScreenContentFailed += (err) =>
             {
-                Debug.LogWarning($"Rewarded Ad Failed to show: {err.GetMessage()}");
+                Debug.LogWarning($"[AdManager] Rewarded Ad Failed to show: {err.GetMessage()}");
                 LoadRewardedAd();
             };
         });
@@ -206,15 +205,15 @@ public class AdManager : MonoBehaviour
         {
             rewardedAd.Show(reward =>
             {
-                Debug.Log("User earned reward");
+                Debug.Log("[AdManager] User earned reward");
                 OnRewardedAdCompleted?.Invoke();
                 onRewardComplete?.Invoke();
             });
-            Debug.Log("Rewarded Ad Shown");
+            Debug.Log("[AdManager] Rewarded Ad Shown");
             return true;
         }
 
-        Debug.LogWarning("Rewarded Ad not ready, reloading");
+        Debug.LogWarning("[AdManager] Rewarded Ad not ready, reloading");
         LoadRewardedAd();
         return false;
     }

@@ -10,38 +10,37 @@ public class QuestManager : MonoBehaviour
     private void Awake()
     {
         questUI = FindFirstObjectByType<QuestUI>();
-        timer = FindFirstObjectByType<Timer>();
     }
     private void OnEnable()
     {
-        //activeQuestSO.OnQuestCompleted += CompleteLevel;
+        activeQuestSO.OnQuestCompleted += CompleteLevel;
+    }
+    private void OnDestroy()
+    {
+        activeQuestSO.OnQuestCompleted -= CompleteLevel;
     }
 
     private void Start()
     {
         questUI.SetUpQuest(activeQuestSO);
-        //StartLevel();
+        timer = GameManager.Instance.Timer;
+        
+        AnalyticsManager.Instance.WaitForInitialization(() => StartLevel());
     }
-    //[Button]
-    //public void StartLevel()
-    //{
-    //    GameAnalyticsManager.Instance.LogLevelStart(activeQuestSO.QuestName);
-    //}
-    //[Button]
-    //public void CompleteLevel()
-    //{
-    //    GameAnalyticsManager.Instance.LogLevelComplete(activeQuestSO.QuestName, timer.GetTime());
-    //    GameAnalyticsManager.Instance.LogSessionDuration(timer.GetTime());
-    //    Debug.Log($"Sending play time: {timer.GetTime()}");
-    //}
-    //[Button]
-    //public void FailLevel()
-    //{
-    //    GameAnalyticsManager.Instance.LogLevelFail(activeQuestSO.QuestName, timer.GetTime());
-    //}
 
-    //public void OnCrash(string crashReason, Vector3 position)
-    //{
-    //    GameAnalyticsManager.Instance.LogCrash(crashReason, position);
-    //}
+    [Button]
+    public void StartLevel()
+    {
+        AnalyticsManager.Instance.LogLevelStart(activeQuestSO.QuestName);
+    }
+    [Button]
+    public void CompleteLevel()
+    {
+        AnalyticsManager.Instance.LogLevelComplete(activeQuestSO.QuestName, timer.GetTime());
+    }
+    [Button]
+    public void FailLevel()
+    {
+        AnalyticsManager.Instance.LogLevelFail(activeQuestSO.QuestName, timer.GetTime());
+    }
 }

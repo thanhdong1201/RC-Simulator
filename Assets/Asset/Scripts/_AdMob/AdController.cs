@@ -15,23 +15,20 @@ public class AdController : MonoBehaviour
         showInterstitial.OnEventRaised -= ShowInterstitialAd;
         showRewarded.OnEventRaised -= ShowRewardedAd;
     }
-    // Gọi từ UI Button (Interstitial)
     [Button]
     public void ShowInterstitialAd()
     {
         if (AdManager.Instance.ShowInterstitial())
         {
-            Debug.Log("Interstitial Ad triggered");
+            AnalyticsManager.Instance.LogAdImpression("interstitial");
         }
     }
-
-    // Gọi từ UI Button (Rewarded)
     [Button]
     public void ShowRewardedAd()
     {
         AdManager.Instance.ShowRewardedAd(() =>
         {
-            Debug.Log($"Rewarded Ad completed");
+            AnalyticsManager.Instance.LogAdImpression("rewarded");
         });
     }
 }
