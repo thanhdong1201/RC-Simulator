@@ -189,6 +189,9 @@ public class RopeVerlet : MonoBehaviour
             Collider[] colliders = Physics.OverlapSphere(segment.CurrentPosition, collisionRadius, collisionMask);
             foreach (Collider collider in colliders)
             {
+                bool isValidCollider = collider is BoxCollider || collider is SphereCollider || collider is CapsuleCollider || (collider is MeshCollider meshCollider && meshCollider.convex);
+                if (!isValidCollider) return;
+
                 Vector3 closestPoint = collider.ClosestPoint(segment.CurrentPosition);
                 float distance = Vector3.Distance(segment.CurrentPosition, closestPoint);
 

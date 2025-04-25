@@ -2,6 +2,7 @@
   "project_info": {
     "project_number": "174177813074",
     "project_id": "helicopter-rc-simulator",
+    "firebase_url": "https://fake.firebaseio.com",
     "storage_bucket": "helicopter-rc-simulator.firebasestorage.app"
   },
   "client": [

@@ -278,10 +278,11 @@ MonoBehaviour:
   helicopterAudio: {fileID: 8365687650875448677}
   mainRotor: {fileID: 7935177567778010882}
   tailRotor: {fileID: 8487100183916857178}
-  turnSpeed: 15
-  forwardSpeed: 12
-  forwardTilt: 15
-  turnTilt: 15
+  turnSpeed: 20
+  forwardSpeed: 15
+  sideSpeed: 15
+  forwardTilt: 20
+  turnTilt: 20
   maxAltitude: 100
   climbSpeed: 15
   swayAmplitude: 2

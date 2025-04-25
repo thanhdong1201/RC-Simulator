@@ -10,6 +10,8 @@ namespace RC
         private Rigidbody helicopterRigidbody;
         [SerializeField] private HeliRotorController mainRotor;
         [SerializeField] private HeliRotorController tailRotor;
+        [SerializeField] private Material crashVisual;
+        [SerializeField] private MeshRenderer[] crashMeshRenderers;
 
         [Header("Flight Parameters")]
         [SerializeField] private float turnSpeed = 10f;
@@ -31,6 +33,7 @@ namespace RC
         [SerializeField] private LayerMask groundLayer; 
         [SerializeField] private bool isGrounded = true;
         [SerializeField] private bool isColision = false;
+        [SerializeField] private bool isCrashed = false;
 
         [Header("Control Inputs")]
         [SerializeField] private InputReaderSO inputReader;
@@ -60,11 +63,13 @@ namespace RC
         private void UpdatePowerInput(Vector2 value) => powerInput = value;
         private void Update()
         {
+            if (isCrashed) return;
             GroundCheck();
             UpdateRotorEffect();
         }
         private void FixedUpdate()
         {
+            if (isCrashed) return;
             ApplyLiftForce();
 
             if (isGrounded) return;
@@ -160,19 +165,37 @@ namespace RC
         //Hiệu ứng cánh quạt và âm thanh
         private void UpdateRotorEffect()
         {
-            // Lấy độ cao hiện tại
-            float currentAltitude = helicopterRigidbody.transform.position.y;
+            if (!isCrashed)
+            {
+                // Lấy độ cao hiện tại
+                float currentAltitude = helicopterRigidbody.transform.position.y;
 
-            // Quy đổi độ cao thành tỉ lệ từ 0 đến 1 dựa trên maxAltitude
-            float heightRatio = Mathf.Clamp01(currentAltitude / maxAltitude);
+                // Quy đổi độ cao thành tỉ lệ từ 0 đến 1 dựa trên maxAltitude
+                float heightRatio = Mathf.Clamp01(currentAltitude / maxAltitude);
 
-            float pitch = Mathf.Lerp(0.6f, 1f, heightRatio);
-            helicopterAudio.pitch = pitch;
+                float pitch = Mathf.Lerp(0.6f, 1f, heightRatio);
+                helicopterAudio.pitch = pitch;
 
 
-            float rotorSpeed = Mathf.Lerp(0.2f, 1f, heightRatio);
-            mainRotor.RotarSpeed = 3000f * rotorSpeed;
-            tailRotor.RotarSpeed = 3000f * rotorSpeed;
+                float rotorSpeed = Mathf.Lerp(0.2f, 1f, heightRatio);
+                mainRotor.RotarSpeed = 3000f * rotorSpeed;
+                tailRotor.RotarSpeed = 3000f * rotorSpeed;
+            }
+        }
+        [Button]
+        public void Crash()
+        {
+            isCrashed = true;
+            helicopterRigidbody.useGravity = true;
+            helicopterRigidbody.AddRelativeForce(Vector3.down * 2f);
+            mainRotor.enabled = false;
+            tailRotor.enabled = false;
+            helicopterAudio.Stop();
+
+            foreach(var meshRenderer in crashMeshRenderers)
+            {
+                meshRenderer.material = crashVisual;
+            }
         }
         private void OnCollisionEnter()
         {

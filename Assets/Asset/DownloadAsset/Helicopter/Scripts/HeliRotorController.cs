@@ -25,20 +25,21 @@ public class HeliRotorController : MonoBehaviour
     void Start ()
 	{
         OriginalRotate = transform.localEulerAngles;
+        rotateDegree = 0f;
     }
 
 	void Update ()
 	{
-		if (IsReversed)
-		{
-            rotateDegree -= RotarSpeed * Time.deltaTime;
+        if (IsReversed)
+        {
+            rotateDegree -= RotarSpeed * Time.unscaledDeltaTime;
         }
-		else
-		{
-            rotateDegree += RotarSpeed * Time.deltaTime;
+        else
+        {
+            rotateDegree += RotarSpeed * Time.unscaledDeltaTime;
         }
-            
-		rotateDegree = rotateDegree%360;
+
+        rotateDegree = rotateDegree%360;
 
         switch (RotateAxis)
 		{
