@@ -42,8 +42,4 @@ public class QuestSO : ScriptableObject
             OnQuestCompleted?.Invoke();
         }
     }
-    public void GetStarPoints()
-    {
-        starPoints++;
-    }
 }
