@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &447356172539844786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7797085242720637216}
+  m_Layer: 3
+  m_Name: FpsCam
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7797085242720637216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447356172539844786}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.95, z: 17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2205498702974552406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6477146655949911526
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,6 +161,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8951991279014506595}
+    - targetCorrespondingSourceObject: {fileID: 400002, guid: f81aafb8004015d4b8c0add1556aee0a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7797085242720637216}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: f81aafb8004015d4b8c0add1556aee0a,
         type: 3}
@@ -296,6 +331,9 @@ MonoBehaviour:
   isGrounded: 0
   isColision: 0
   inputReader: {fileID: 11400000, guid: b4adbdb838dac7b46ba6872ebca1537a, type: 2}
+  toggleSO: {fileID: 0}
+  crashVisual: {fileID: 0}
+  crashMeshRenderers: []
 --- !u!82 &8365687650875448677
 AudioSource:
   m_ObjectHideFlags: 0

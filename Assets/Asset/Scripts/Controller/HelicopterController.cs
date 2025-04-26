@@ -10,8 +10,6 @@ namespace RC
         private Rigidbody helicopterRigidbody;
         [SerializeField] private HeliRotorController mainRotor;
         [SerializeField] private HeliRotorController tailRotor;
-        [SerializeField] private Material crashVisual;
-        [SerializeField] private MeshRenderer[] crashMeshRenderers;
 
         [Header("Flight Parameters")]
         [SerializeField] private float turnSpeed = 10f;
@@ -33,16 +31,21 @@ namespace RC
         [SerializeField] private LayerMask groundLayer; 
         [SerializeField] private bool isGrounded = true;
         [SerializeField] private bool isColision = false;
-        [SerializeField] private bool isCrashed = false;
 
         [Header("Control Inputs")]
         [SerializeField] private InputReaderSO inputReader;
+        [SerializeField] private UIToggleSO toggleSO;
+
+        [Header("Crash Settings")]
+        [SerializeField] private Material crashVisual;
+        [SerializeField] private MeshRenderer[] crashMeshRenderers;
 
         private Vector2 moveInput = Vector2.zero;
         private Vector2 powerInput = Vector2.zero;
         private Vector2 tiltInput = Vector2.zero;
         //private float turnForce = 0f;
         private float swayTimer = 0f;
+        private bool isCrashed = false;
 
         private void OnEnable()
         {
@@ -196,6 +199,8 @@ namespace RC
             {
                 meshRenderer.material = crashVisual;
             }
+
+            toggleSO.GameOver();
         }
         private void OnCollisionEnter()
         {

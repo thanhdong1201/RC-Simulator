@@ -5,7 +5,8 @@ public class HelicopterSetup : MonoBehaviour
 {
     [SerializeField] private List<GameObject> helicopterList = new List<GameObject>();
     [SerializeField] private HelicopterListSO helicopterListSO;
-    [SerializeField] private FollowTransform followTransform;
+    [SerializeField] private FollowTransform tpsCam;
+    [SerializeField] private FollowTransform fpsCam;
 
     private void Awake()
     {
@@ -22,7 +23,16 @@ public class HelicopterSetup : MonoBehaviour
                 if (helicopterList[i].GetComponent<HelicopterName>().HelicopterData == currentHelicopter)
                 {
                     helicopterList[i].SetActive(true);
-                    followTransform.SetTarget(helicopterList[i].transform);
+                    tpsCam.SetTarget(helicopterList[i].transform);
+                    
+                    foreach (Transform child in helicopterList[i].transform)
+                    {
+                        if (child.name == "FpsCam")
+                        {
+                            fpsCam.SetTarget(child);
+                            break;
+                        }
+                    }
                 }
                 else
                 {
@@ -37,7 +47,7 @@ public class HelicopterSetup : MonoBehaviour
                 if (i == 0)
                 {
                     helicopterList[i].SetActive(true);
-                    followTransform.SetTarget(helicopterList[i].transform);
+                    tpsCam.SetTarget(helicopterList[i].transform);
                 }
                 else
                 {

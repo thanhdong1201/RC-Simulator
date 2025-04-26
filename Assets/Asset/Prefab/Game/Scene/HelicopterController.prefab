@@ -94,6 +94,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6324257453163650039}
+  - {fileID: 7003364806975212851}
   - {fileID: 7926871391102801521}
   - {fileID: 5489219187381168561}
   - {fileID: 1673606695253717932}
@@ -118,7 +119,55 @@ MonoBehaviour:
   - {fileID: 7926871391102831185}
   - {fileID: 6667576139656540528}
   helicopterListSO: {fileID: 11400000, guid: ac48dad2ca2f60c4fbe4947dcc42dbb8, type: 2}
-  followTransform: {fileID: 5043780987627082085}
+  tpsCam: {fileID: 5043780987627082085}
+  fpsCam: {fileID: 8446043395599794630}
+--- !u!1 &1433494602893539625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7003364806975212851}
+  - component: {fileID: 8446043395599794630}
+  m_Layer: 0
+  m_Name: FollowFPS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7003364806975212851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433494602893539625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 582131269302637373}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8446043395599794630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433494602893539625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6bdd703ca96bc4ea9dee6a278a3ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 5489219187381168561}
+  positionOffset: {x: 0, y: 0.5, z: 0}
+  followRotation: 1
 --- !u!1 &2023406255690730916
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +501,7 @@ GameObject:
   - component: {fileID: 6324257453163650039}
   - component: {fileID: 5043780987627082085}
   m_Layer: 0
-  m_Name: FollowTarget
+  m_Name: FollowTPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -782,6 +831,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 988736958070632693, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
         type: 3}
+      propertyPath: toggleSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e20cb6a17f6b4584881b01b3bfba7066,
+        type: 2}
+    - target: {fileID: 988736958070632693, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
+        type: 3}
       propertyPath: sideSpeed
       value: 12
       objectReference: {fileID: 0}
@@ -873,7 +928,7 @@ PrefabInstance:
     - target: {fileID: 2205498702974784886, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8951991279014506595, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
         type: 3}
@@ -951,6 +1006,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 582131269302637373}
     m_Modifications:
+    - target: {fileID: 988736958070632693, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
+        type: 3}
+      propertyPath: toggleSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e20cb6a17f6b4584881b01b3bfba7066,
+        type: 2}
     - target: {fileID: 988736958070632693, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
         type: 3}
       propertyPath: turnSpeed
@@ -1039,7 +1100,7 @@ PrefabInstance:
     - target: {fileID: 2205498702974784886, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2658006890508487894, guid: 8db3a44d2ab21c74bbb88d239438ef2d,
         type: 3}
@@ -1159,6 +1220,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3490544217126988408, guid: 5fd91a0ef058b04489b49e3878691180,
+        type: 3}
+      propertyPath: toggleSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e20cb6a17f6b4584881b01b3bfba7066,
+        type: 2}
     - target: {fileID: 3490544217126988408, guid: 5fd91a0ef058b04489b49e3878691180,
         type: 3}
       propertyPath: turnSpeed
@@ -1372,6 +1439,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6828333048644099993, guid: 1e2d553c9a5892b4ba7b9bff3dd18341,
+        type: 3}
+      propertyPath: toggleSO
+      value: 
+      objectReference: {fileID: 11400000, guid: e20cb6a17f6b4584881b01b3bfba7066,
+        type: 2}
     - target: {fileID: 6828333048644099993, guid: 1e2d553c9a5892b4ba7b9bff3dd18341,
         type: 3}
       propertyPath: sideSpeed

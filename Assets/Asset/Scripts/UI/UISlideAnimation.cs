@@ -47,7 +47,10 @@ public class UISlideAnimation : MonoBehaviour
 
     private void StopAnimation()
     {
-        tween?.Kill();
-        tween = null;
+        if (tween != null)
+        {
+            tween.Kill(true);
+            tween = null;
+        }
     }
 }

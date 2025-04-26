@@ -40,6 +40,11 @@ public class UIToggleSO : ScriptableObject
         TogglePanel(UIPanel.CutScene);
         SetGamePaused(false);
     }
+    public void GameOver()
+    {
+        TogglePanel(UIPanel.GameOver);
+        SetGamePaused(true);
+    }
     private void OnEnable()
     {
         SetGamePaused(false);

@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5744924105531094255}
   m_Layer: 3
-  m_Name: Target
+  m_Name: FpsCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -301,6 +301,9 @@ MonoBehaviour:
   isGrounded: 0
   isColision: 0
   inputReader: {fileID: 11400000, guid: b4adbdb838dac7b46ba6872ebca1537a, type: 2}
+  toggleSO: {fileID: 0}
+  crashVisual: {fileID: 0}
+  crashMeshRenderers: []
 --- !u!114 &1276992956834284456
 MonoBehaviour:
   m_ObjectHideFlags: 0
