@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb02444be7878384aaa0d42acb4bbfe5, type: 3}
-  m_Name: Quest
+  m_Name: Shoot down all the bottles
   m_EditorClassIdentifier: 
-  questName: First step to the sky
-  description: You are free to learn and fly this helicopter
-  questObjective: 
-  totalSteps: 1
+  questName: Shoot down all the bottles
+  description: Prove your aim by destroying every bottle
+  questObjective: Bottle
+  totalSteps: 5
   currentStep: 0
   isCompleted: 0
+  starPoints: -1

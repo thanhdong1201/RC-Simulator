@@ -1708,6 +1708,7 @@ MonoBehaviour:
   sceneSetupList:
   - {fileID: 6340761311117374603}
   - {fileID: 8237293257508006925}
+  - {fileID: 4154817971642460274}
   loadingUI: {fileID: 4904265637703487575}
   loadingText: {fileID: 7838166134999392321}
   continueBtn: {fileID: 498891797624449515}
@@ -2436,12 +2437,12 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneSO
       value: 
-      objectReference: {fileID: 11400000, guid: f320796227f4b26459100c1c423ea1ac,
+      objectReference: {fileID: 11400000, guid: 8e3f7a14b51d9174da1a08cfbe507f90,
         type: 2}
     - target: {fileID: 2344220640094930480, guid: 4e606883878e4ab4d8446868bb950d09,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3651080535161667753, guid: 4e606883878e4ab4d8446868bb950d09,
         type: 3}
@@ -2561,13 +2562,25 @@ PrefabInstance:
     - target: {fileID: 8639591420468458576, guid: 4e606883878e4ab4d8446868bb950d09,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e606883878e4ab4d8446868bb950d09, type: 3}
+--- !u!114 &4154817971642460274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2344220640094930480, guid: 4e606883878e4ab4d8446868bb950d09,
+    type: 3}
+  m_PrefabInstance: {fileID: 1810650111522844226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e1b7242c4881440920198dc091f75f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7906910654738224925 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8402104985927252319, guid: 4e606883878e4ab4d8446868bb950d09,
@@ -2586,7 +2599,7 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneSO
       value: 
-      objectReference: {fileID: 11400000, guid: f320796227f4b26459100c1c423ea1ac,
+      objectReference: {fileID: 11400000, guid: 22c94b9e44971b542b8468fde82f1988,
         type: 2}
     - target: {fileID: 2344220640094930480, guid: 4e606883878e4ab4d8446868bb950d09,
         type: 3}

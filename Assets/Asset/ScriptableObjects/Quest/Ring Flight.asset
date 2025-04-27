@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 850f4630c183ae644bb24ae574f54362, type: 3}
-  m_Name: Main 1
+  m_Script: {fileID: 11500000, guid: fb02444be7878384aaa0d42acb4bbfe5, type: 3}
+  m_Name: Ring Flight
   m_EditorClassIdentifier: 
-  questSO: {fileID: 11400000, guid: 5db2b1f795805e94596783f42c95d2c2, type: 2}
-  level: 2
-  isUnlocked: 0
+  questName: Ring Flight
+  description: Master your piloting skills by flying through all the rings
+  questObjective: Ring
+  totalSteps: 3
+  currentStep: 0
+  isCompleted: 0
+  starPoints: 0

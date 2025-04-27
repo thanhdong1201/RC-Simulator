@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb02444be7878384aaa0d42acb4bbfe5, type: 3}
-  m_Name: Fire Extinguishing
+  m_Script: {fileID: 11500000, guid: 850f4630c183ae644bb24ae574f54362, type: 3}
+  m_Name: Level 4
   m_EditorClassIdentifier: 
-  questName: Fire Extinguishing
-  description: Put out all the fires
-  questObjective: Fires extinguished
-  totalSteps: 1
-  currentStep: 0
-  isCompleted: 0
-  starPoints: 0
+  questSO: {fileID: 11400000, guid: 6188dbff895b6a8489ff698f57f4b2dd, type: 2}
+  level: 4
+  isUnlocked: 1

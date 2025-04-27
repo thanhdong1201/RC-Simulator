@@ -1,14 +1,23 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class HelicopterSetup : MonoBehaviour
 {
+    [Tooltip("Nếu có HelicopterSO thì chỉ có loại heli đó được chơi ở màn này, nếu không thì được chọn tự do")]
+    [SerializeField] private HelicopterSO helicopterSO;
     [SerializeField] private List<GameObject> helicopterList = new List<GameObject>();
     [SerializeField] private HelicopterListSO helicopterListSO;
     [SerializeField] private FollowTransform tpsCam;
     [SerializeField] private FollowTransform fpsCam;
 
     private void Awake()
+    {
+        if(helicopterSO != null)
+        {
+            helicopterListSO.SetCurrentHelicopter(helicopterSO);
+        }
+    }
+    private void Start()
     {
         SetUp();
     }

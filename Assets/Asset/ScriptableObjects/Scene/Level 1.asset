@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb02444be7878384aaa0d42acb4bbfe5, type: 3}
-  m_Name: Fly to circle
+  m_Script: {fileID: 11500000, guid: 850f4630c183ae644bb24ae574f54362, type: 3}
+  m_Name: Level 1
   m_EditorClassIdentifier: 
-  questName: Fly to circle
-  description: Learn how to fly
-  questObjective: Circle
-  totalSteps: 1
-  currentStep: 0
-  isCompleted: 0
-  starPoints: -1
+  questSO: {fileID: 11400000, guid: bdc4c337ef5ff5e4c83269721f12bd26, type: 2}
+  level: 1
+  isUnlocked: 1

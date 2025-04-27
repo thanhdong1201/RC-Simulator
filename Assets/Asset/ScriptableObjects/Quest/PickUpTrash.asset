@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb02444be7878384aaa0d42acb4bbfe5, type: 3}
   m_Name: PickUpTrash
   m_EditorClassIdentifier: 
-  questName: Pick up all the trash
-  description: Pick up all the trash
+  questName: Trash Collector
+  description: Collect the scattered trash, and drop it into the bin
   questObjective: 'Trash '
-  totalSteps: 1
+  totalSteps: 3
   currentStep: 1
-  isCompleted: 1
+  isCompleted: 0
+  starPoints: 0

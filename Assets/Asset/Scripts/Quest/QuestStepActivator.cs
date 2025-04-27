@@ -28,9 +28,13 @@ public class QuestStepActivator : MonoBehaviour
         if (isActivated) return;
         if (other.CompareTag("Player") || other.CompareTag("Interactable"))
         {
-            isActivated = true;
             quest.ProgressStep();
             onActivateEvent?.Invoke();
+
+            if(quest.CurrentStep >= quest.TotalSteps)
+            {
+                isActivated = true;
+            }
         }
     }
 }

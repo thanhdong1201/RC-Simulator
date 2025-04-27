@@ -11,6 +11,10 @@ public class QuestUI : MonoBehaviour
 
     private QuestSO quest;
 
+    private void OnEnable()
+    {
+        
+    }
     private void OnDestroy()
     {
         quest.OnQuestCompleted -= OnQuestCompleted;

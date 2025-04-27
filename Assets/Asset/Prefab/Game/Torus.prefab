@@ -19580,6 +19580,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -75.97
       objectReference: {fileID: 0}
@@ -19627,6 +19642,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,
         type: 3}
@@ -19678,7 +19698,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5776268916159679962}
+      addedObject: {fileID: 7156231488155815241}
   m_SourcePrefab: {fileID: 100100000, guid: 155b3b26c2349b24ea0f5aafd20cf3f7, type: 3}
 --- !u!1 &4693755266586703318 stripped
 GameObject:
@@ -19705,9 +19725,9 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5776268916159679962
+--- !u!114 &7156231488155815241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -19716,7 +19736,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4693755266586703318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 236e98ac5c1e2f349ae6980209e6c5ad, type: 3}
+  m_Script: {fileID: 11500000, guid: d21b45145e648d74394fff7662aff612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   quest: {fileID: 11400000, guid: bdc4c337ef5ff5e4c83269721f12bd26, type: 2}
@@ -19748,7 +19768,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  onTriggerEnter: 0
+  centerThreshold: 2
 --- !u!4 &5361606993305186156 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 155b3b26c2349b24ea0f5aafd20cf3f7,

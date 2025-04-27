@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb02444be7878384aaa0d42acb4bbfe5, type: 3}
-  m_Name: Quest 2
+  m_Script: {fileID: 11500000, guid: 850f4630c183ae644bb24ae574f54362, type: 3}
+  m_Name: Level 2
   m_EditorClassIdentifier: 
-  questName: Find the green landing pad
-  description: Fly around and landing at the green pad
-  questObjective: 
-  totalSteps: 1
-  currentStep: 0
-  isCompleted: 0
+  questSO: {fileID: 11400000, guid: 5db2b1f795805e94596783f42c95d2c2, type: 2}
+  level: 2
+  isUnlocked: 1

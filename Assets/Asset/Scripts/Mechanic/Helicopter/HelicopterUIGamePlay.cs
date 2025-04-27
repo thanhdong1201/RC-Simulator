@@ -7,6 +7,14 @@ public class HelicopterUIGamePlay : MonoBehaviour
     [SerializeField] private GameObject combatUI;
     [SerializeField] private HelicopterListSO helicopterListSO;
 
+    private void OnEnable()
+    {
+        
+    }
+    private void OnDisable()
+    {
+        
+    }
     private void Awake()
     {
         fireFightingUI.SetActive(false);

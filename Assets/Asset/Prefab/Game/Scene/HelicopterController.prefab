@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762d83dd105866545be36276aea3f6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  helicopterSO: {fileID: 0}
   helicopterList:
   - {fileID: 1673606695254208396}
   - {fileID: 5489219187381073297}
@@ -1229,13 +1230,18 @@ PrefabInstance:
     - target: {fileID: 3490544217126988408, guid: 5fd91a0ef058b04489b49e3878691180,
         type: 3}
       propertyPath: turnSpeed
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3490544217126988408, guid: 5fd91a0ef058b04489b49e3878691180,
         type: 3}
       propertyPath: crashVisual
       value: 
       objectReference: {fileID: 2100000, guid: 3b36c47b28b952d419480149cee4f4d1, type: 2}
+    - target: {fileID: 3490544217126988408, guid: 5fd91a0ef058b04489b49e3878691180,
+        type: 3}
+      propertyPath: forwardSpeed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3490544217126988408, guid: 5fd91a0ef058b04489b49e3878691180,
         type: 3}
       propertyPath: crashMeshRenderers.Array.size
