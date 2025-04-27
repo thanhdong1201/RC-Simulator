@@ -17,7 +17,7 @@ Material:
   - _SPECULARHIGHLIGHTS_OFF
   m_InvalidKeywords: []
   m_LightmapFlags: 1
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -82,5 +82,5 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 8, g: 7.623529, b: 6.7137256, a: 1}
+    - _EmissionColor: {r: 8.47419, g: 8.075404, b: 7.111673, a: 1}
   m_BuildTextureStacks: []
