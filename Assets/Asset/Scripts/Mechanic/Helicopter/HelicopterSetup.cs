@@ -7,8 +7,10 @@ public class HelicopterSetup : MonoBehaviour
     [SerializeField] private HelicopterSO helicopterSO;
     [SerializeField] private List<GameObject> helicopterList = new List<GameObject>();
     [SerializeField] private HelicopterListSO helicopterListSO;
-    [SerializeField] private FollowTransform tpsCam;
-    [SerializeField] private FollowTransform fpsCam;
+    //[SerializeField] private FollowTransform tpsCam;
+    //[SerializeField] private FollowTransform fpsCam;
+    [SerializeField] private Transform tpsCam;
+    [SerializeField] private Transform fpsCam;
 
     private void Awake()
     {
@@ -32,13 +34,19 @@ public class HelicopterSetup : MonoBehaviour
                 if (helicopterList[i].GetComponent<HelicopterName>().HelicopterData == currentHelicopter)
                 {
                     helicopterList[i].SetActive(true);
-                    tpsCam.SetTarget(helicopterList[i].transform);
-                    
+                    tpsCam.SetParent(helicopterList[i].transform);
+                    tpsCam.localPosition = Vector3.zero;
+                    tpsCam.localRotation = Quaternion.identity;
+                    tpsCam.localScale = Vector3.one;
+
                     foreach (Transform child in helicopterList[i].transform)
                     {
                         if (child.name == "FpsCam")
                         {
-                            fpsCam.SetTarget(child);
+                            fpsCam.SetParent(child);
+                            fpsCam.localPosition = Vector3.zero;
+                            fpsCam.localRotation = Quaternion.identity;
+                            fpsCam.localScale = Vector3.one;
                             break;
                         }
                     }
@@ -51,19 +59,19 @@ public class HelicopterSetup : MonoBehaviour
         }
         else
         {
-            for (int i = 0; i < helicopterList.Count; i++)
-            {
-                if (i == 0)
-                {
-                    helicopterList[i].SetActive(true);
-                    tpsCam.SetTarget(helicopterList[i].transform);
-                }
-                else
-                {
-                    helicopterList[i].SetActive(false);
-                }
+            //for (int i = 0; i < helicopterList.Count; i++)
+            //{
+            //    if (i == 0)
+            //    {
+            //        helicopterList[i].SetActive(true);
+            //        tpsCam.SetTarget(helicopterList[i].transform);
+            //    }
+            //    else
+            //    {
+            //        helicopterList[i].SetActive(false);
+            //    }
 
-            }
+            //}
         }
 
     }
