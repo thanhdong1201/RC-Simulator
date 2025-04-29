@@ -193,10 +193,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 17d12b7570a4eff4eaaa2562f61e7fda,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1276992956834284456}
-    - targetCorrespondingSourceObject: {fileID: 100002, guid: 17d12b7570a4eff4eaaa2562f61e7fda,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 9205622083503612907}
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 17d12b7570a4eff4eaaa2562f61e7fda,
         type: 3}
@@ -304,26 +300,6 @@ MonoBehaviour:
   toggleSO: {fileID: 0}
   crashVisual: {fileID: 0}
   crashMeshRenderers: []
---- !u!114 &1276992956834284456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2968328088053330665}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 661695ca70b38e8428ee8e9f0443a90a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lookTarget: {fileID: 5744924105531094255}
-  sensitivityX: 200
-  sensitivityY: 200
-  minPitch: -90
-  maxPitch: 90
-  resetSpeed: 10
-  resetThreshold: 0.05
-  inputReader: {fileID: 11400000, guid: b4adbdb838dac7b46ba6872ebca1537a, type: 2}
 --- !u!82 &9205622083503612907
 AudioSource:
   m_ObjectHideFlags: 0

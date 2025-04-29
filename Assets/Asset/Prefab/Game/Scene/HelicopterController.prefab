@@ -73,6 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 582131269302637373}
   - component: {fileID: 7535574395902253282}
+  - component: {fileID: 4531212041544906775}
   m_Layer: 3
   m_Name: HelicopterController
   m_TagString: Untagged
@@ -122,6 +123,25 @@ MonoBehaviour:
   helicopterListSO: {fileID: 11400000, guid: ac48dad2ca2f60c4fbe4947dcc42dbb8, type: 2}
   tpsCam: {fileID: 5043780987627082085}
   fpsCam: {fileID: 8446043395599794630}
+--- !u!114 &4531212041544906775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350154969951775776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661695ca70b38e8428ee8e9f0443a90a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookTarget: {fileID: 6324257453163650039}
+  sensitivityX: 100
+  sensitivityY: 100
+  minPitch: -80
+  maxPitch: 80
+  resetSpeed: 2
+  inputReader: {fileID: 11400000, guid: b4adbdb838dac7b46ba6872ebca1537a, type: 2}
 --- !u!1 &1433494602893539625
 GameObject:
   m_ObjectHideFlags: 0
